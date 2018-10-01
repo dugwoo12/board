@@ -1,0 +1,68 @@
+<html>
+  <head>
+    </head>
+    <body>
+      <h1 align=center>board view</h1>
+  <table border="1" align=center>
+    <tbody>
+      <tr>
+        <td>writer</td>
+        <td> {{res[0]['name']}}</td>
+      </tr>
+      <tr>
+      <td width="100">title</td>
+      <td>{{res[0]['title']}}</td>
+      </tr>
+      <tr>
+        <td width="300" height="100">content</td>
+        <td>{{res[0]['content']}}</td>
+      </tr>
+      <tr>
+        <td width="350">date</td>
+        <td>{{res[0]['dt']}}</td>
+        <tr>
+          <tr>
+            <td>file</td>
+            <td>{{res[0]['upload']}}</td>
+          </tr>
+  <td colspan="2" align=right><input type="button" value="수정하기" onclick="location.href='/board_modify/{{res[0]['idx']}}'">
+        <input  type="button" value="삭제하기" onclick="location.href='/board_delete/{{res[0]['idx']}}'">
+      <input type="button" value="목록" onclick="location.href='/'"></td>
+ </tr>
+ <tr>
+   <td colspan="2" align="center">댓글</td>
+ </tr>
+ {% for reply in res2 %}
+  
+ 
+ <tr>
+   <td colspan="2" width="650">{{reply['idx']}}, {{reply['content']}}<a href="/board_view/{{reply['idx_r']}}/reply/{{reply['idx']}}"><input  type="button" value="수정"></a><a href="/board_view/{{reply['idx_r']}}/reply_delete/{{reply['idx']}}"><input type="button"  value="삭제"></a></td><td align="right">{{reply['name']}} {{reply['dt']}}</td>
+ </tr>
+ 
+ {% endfor %}
+  </table>
+ 
+  <form name="replay_update" action="/board_view/{{res[0]['idx']}}" method="POST">
+  <table border="1" align="center" >
+    <tbody>
+ 
+ <tr>
+   <td colspan="2" align=center>댓글쓰기</td>
+   </tr>
+   <tr>
+   <td colspan="2"><textarea type="text" name="reply_content" cols="130" rows="1"></textarea></td>
+   </tr>
+   <tr>
+     <td colspan="2" align=right>writer : {{data}} </td>
+
+ </tr>
+ <tr>
+   <td colspan="2" align=right><input type="submit" value="등록"></td>
+     </form>
+ </tr>
+    </tbody>
+  </table>
+  
+  
+  </body>
+</html>

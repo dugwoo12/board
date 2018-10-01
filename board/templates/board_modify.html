@@ -1,0 +1,24 @@
+<html>
+  <head>
+    </head>
+    <body>
+      <fieldset style="width:600px;height:600px">
+        <legend>게시물 수정</legend>
+      <table border="1" width="500" height="500" >
+        <tbody>
+      <form name="board_modify" action="/board_modify/{{data[0]['idx']}}" method='POST'>
+        <tr>
+          <td height="20">Title</td><td><input size=80type="text" name="board_title" placeholder={{data[0]['title']}}></td>
+        </tr>
+        <tr> 
+          <td height="100">Content</td><td><textarea  name="board_content" cols='80' rows='27' wrap="SOFT" placeholder={{data[0]['content']}}></textarea></td>
+        </tr>
+        <tr>
+          <td height="20">Writer</td><td>{{data[0]['name']}}</td>
+        </tr>
+        </tbody>
+      </table>
+          <p align=center><input type="submit" value="수정"> <input type="button" onclick="history.go(-1)" value="취소"></p>
+      </fieldset>
+  </body>
+</html>

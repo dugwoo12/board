@@ -1,0 +1,33 @@
+<html>
+  <head>
+  </head>
+  <body>
+     <table border="1" align ="center" >
+       <tbody>
+        <form name="board_write" action="/board_write" method="POST" enctype="multipart/form-data">
+          <tr>
+            <td align=center>title</td>
+          </tr>
+          <tr>
+            <td><input size="110" type="text" name="board_title"></td>
+      </tr>
+      <tr>
+        <td align=center>content</td>
+      </tr>
+      <tr>
+        <td><textarea type="text" name="board_content"cols="110" rows="15"></textarea></td>
+
+      </tr>
+      <tr>
+          <td><input type="file" name='file'><input type="submit" value="upload"><td align=right> writer {{data}}</td>
+        <tr>
+        <td align=right><input type="submit" value="작성완료"></td>
+        </tr>
+          </form>
+       </tbody>
+      </table>
+  </body>
+</html>
+
+
+

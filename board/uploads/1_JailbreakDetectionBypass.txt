@@ -1,0 +1,24 @@
+바이너리 파일을 변경해서 탈옥을 우회하면 된다.
+IDA로 확인한 후 
+
+
+cydia - > zydia   
+
+Library -> Librazry
+
+dylib -> dyzib   
+
+
+/usr/sbin/sshd  -> /usz/sbin/sszd
+
+
+/etc/apt -> /ezc/azt
+
+
+/private/geosn0w -> /privzte / gezsn0w
+
+
+/bin/bash -> /zin/bash
+
+
+위 내용으로 변경 후 다시 바이너리 파일을 넣는다.

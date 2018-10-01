@@ -1,0 +1,38 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <fieldset style="width:300px; height:200px">
+      <legend>회원정보 수정</legend>
+    <table>
+      <tbody> 
+    <form name="user_edit" action="/user_edit" method='POST'>
+      <tr>
+        <td>ID</td>      
+        <td>{{users[0]['name']}}</td>
+      </tr>
+      <tr>
+        <td>PASSWORD</td>
+        <td> <input type=text name='user_pw'></td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td><input type="text" name="user_email" placeholder="{{users[0]['email']}}"></td>
+      </tr>
+      <tr>
+        <td>nname</td>
+        <td><input type="text" name="user_nname" placeholder="{{users[0]['nname']}}"></td>
+      </tr>
+      <tr>
+        <td>pnum</td>
+        <td><input type="tel" name="user_pnum" placeholder="{{users[0]['pnum']}}"></td>
+      </tr>
+      <tr>
+        <td></td><td><input type="submit" value="수정"></td>
+      </tr>
+      </tbody>
+    </table>
+    </fieldset>
+  </body>
+
+</html>

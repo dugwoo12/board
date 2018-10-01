@@ -1,0 +1,37 @@
+<html>
+  <head>
+    </head>
+    <body>
+      <center>Welcom Deok woo board</center>
+      {% if data %}
+      hello : {{data}}<br>
+          
+          <br><input type="button" onclick="location.href='/user_edit'" value="정보수정"><br>
+          <br><form name="logout" action="/logout" method="POST">
+            <input type="submit" value="로그아웃"></form>
+          <input type="button" onclick="location.href='/user_delete'" value="회원탈퇴">
+        
+           <table border="1" align="center" width="600">
+      <tr>
+      <th width="50">number</th>
+      <th width="300">title</th>
+        <th width="0">writer</th>
+        <th width="50">date</th>
+    <tr/>
+      {% for user in users %}
+      <tr>
+  <td align=center>  {{user['idx']}}</td>
+    <td align=center>  <a href="/board_view/{{user['idx']}}">{{user['title']}}</td></a>
+    <td>  {{user['name']}}</td>
+    <td align=right>  {{user['dt']}}</td>
+</tr>
+{% endfor %}
+
+  </table> 
+  <p align=center><input type="button" onclick="location.href='/board_write'" value="글쓰기"></p>
+ {% else %}
+        <br> <a href="/login">로그인</a>
+        <a href="/add">회원가입</a></br>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,26 @@
+
+<html>
+  <head>
+    </head>
+    <body>
+      {% for data in res %}
+      <fieldset style="width:600px;height:600px">
+        <legend>댓글  수정</legend>
+       
+      <table>
+        <tbody>
+          <form name="reply_update_" action="/board_view/{{data['idx_r']}}/reply/{{data['idx']}}" method='POST'>
+        <tr>
+          <td>name</td><td>{{data['name']}}</td>
+        </tr>
+        <tr> 
+          <td>댓글내용</td><td><input type=text value="{{data['Content']}}" name="reply_content"></td>
+        </tr>
+        </tbody>
+      </table>
+          <p align=center><input type="submit" value="수정"> <input type="button" onclick="history.go(-1)" value="취소"></p>
+          </form>
+      </fieldset>
+      {% endfor %}
+  </body>
+</html>

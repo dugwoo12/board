@@ -1,0 +1,59 @@
+<html>
+  <head>
+  </head>
+  <form action="/add" method ="POST">
+    <fieldset style="width:300px; height:250px">
+      <legend>회원가입</legend>
+    <table>
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td><input type="text" name="user_id" ></td>
+        </tr>
+        <tr>
+          <td>PASSWORD</td>
+          <td><input type="password" name="user_pw" ></td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><input type="text" name="user_email" ></td>
+        </tr>
+        <tr>
+          <td>nname</td>
+          <td><input type="text" name="user_nname" ></td>
+        </tr>
+        <tr>
+          <td>pnum</td>
+          <td><input type="tel" name="user_pnum" ></td>
+        </tr>
+        <tr>
+          <td></td><td align=right><input type="submit" value="회원가입"></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    </fieldset>
+    </form>
+    <table border="1" width="1000">
+      <tr>
+      <th width="50">number</th>
+      <th width="50">USER</th>
+      <th width="300">password</th>
+      <th width="100">email</th>
+      <th width="100">nname</th>
+      <th width="100">phone</th>
+    <tr/>
+      {% for user in users %}
+<tr>
+    <td>  {{user[0]}}</td>
+    <td>  {{user[1]}} </td>
+    <td>  {{user[2]}}</td>
+    <td>  {{user[3]}}</td>
+    <td>  {{user[4]}}</td>
+    <td align="center">{{user[5]}}</td>
+</tr>
+{% endfor %}
+  </table>
+  </body>
+</html>
+
